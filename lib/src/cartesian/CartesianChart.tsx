@@ -695,10 +695,16 @@ function CartesianChartContent<
         gesture={composed}
         transformState={transformState}
         dimensions={{
-          x: 0,
-          y: 0,
-          width: size.width,
-          height: size.height,
+          x: valueFromSidedNumber(padding, "left"),
+          y: valueFromSidedNumber(padding, "top"),
+          width:
+            size.width -
+            valueFromSidedNumber(padding, "left") -
+            valueFromSidedNumber(padding, "right"),
+          height:
+            size.height -
+            valueFromSidedNumber(padding, "top") -
+            valueFromSidedNumber(padding, "bottom"),
         }}
       />
     </GestureHandlerRootView>
